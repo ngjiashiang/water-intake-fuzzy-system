@@ -1,113 +1,118 @@
+"use client";
 import Image from 'next/image'
+import { FaGlassWaterDroplet } from "react-icons/fa6";
+import Switch from '@mui/material/Switch';
+import { useState } from 'react';
 
 export default function Home() {
+  const [showSteps, setShowSteps] = useState(true);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setShowSteps(event.target.checked);
+  };
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="min-h-screen flex justify-center py-6">
+      <article className="prose flex flex-col space-y-6 w-11/12 lg:max-w-screen-2xl">
+        <div className='text-center'>
+          <h1>
+            Hydration Assistant <FaGlassWaterDroplet color={'rgb(96 165 250)'} size={'25px'} className="inline my-auto"/>
+          </h1>
+          An expert fuzzy system to recommend how much water should a person drink to stay healthy and hydrated, based on thier
+          <div className='mx-auto text-left w-max block'>
+            <ul className='marker:text-black list-outside'>
+              <li>
+                Environment Temperature
+              </li>
+              <li>
+                Current Water Intake
+              </li>
+              <li>
+                Total Steps Taken
+              </li>
+            </ul>
+          </div>
+          to contribute to <a className="text-blue-500 underline" href="https://sdgs.un.org/goals/goal3" target="_blank"><code>SDG 3: Ensure healthy lives and promote well-being for all at all ages</code></a>.
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        <div className='text-center pt-4'>
+          <span>Hide workings</span><Switch className='mx-6' defaultChecked onChange={handleChange}/><span>Show workings</span>
+        </div>
+        {showSteps &&
+        <>
+          <div>
+            <h2>
+              First things first:
+            </h2>
+            <p>Our process of developing this system follows the steps given below:</p>
+            <ol>
+              <li>
+                <a className='bg-amber-100 px-2 py-0.5 rounded-lg block lg:inline hover:bg-black hover:text-amber-100 focus:bg-black focus:text-amber-100' href="#step-1" >
+                  Specify the problem and define linguistic variables.
+                </a> 
+              </li>
+              <li>
+                <a className='bg-amber-100 px-2 py-0.5 rounded-lg block lg:inline hover:bg-black hover:text-amber-100 focus:bg-black focus:text-amber-100' href="#step-2">
+                  Determine fuzzy sets.
+                </a>
+              </li>  
+              <li>
+                <a className='bg-amber-100 px-2 py-0.5 rounded-lg block lg:inline hover:bg-black hover:text-amber-100 focus:bg-black focus:text-amber-100' href="#step-3">
+                  Elicit and construct fuzzy rules.
+                </a>
+              </li>  
+              <li>
+                <a className='bg-amber-100 px-2 py-0.5 rounded-lg block lg:inline hover:bg-black hover:text-amber-100 focus:bg-black focus:text-amber-100' href="#step-4">
+                  Encode the fuzzy sets, fuzzy rules, and procedures to perform fuzzy inference into the expert system.
+                </a>
+              </li>  
+              <li>
+                <a className='bg-amber-100 px-2 py-0.5 rounded-lg block lg:inline hover:bg-black hover:text-amber-100 focus:bg-black focus:text-amber-100' href="#step-5">
+                  Evaluate and tune the system.
+                </a>
+              </li>  
+            </ol>
+          </div>
+          <div>
+            <h2 id='step-1'>
+              1. Specify the problem and define linguistic variables.
+            </h2>
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, excepturi. Neque architecto quis, possimus deleniti nobis nostrum? Error quis ducimus recusandae esse tempora perspiciatis velit et assumenda, voluptates dolore deleniti, aliquam sit odio laudantium quasi quae corporis dignissimos, dolores repellendus fugit alias quas sunt. Officiis et voluptate dolores ipsam assumenda dolor rem, earum sed doloremque! Deserunt enim aperiam reiciendis neque, vitae dolorem quisquam quos quidem doloribus est numquam tempore ab, pariatur, laboriosam possimus in voluptatibus et excepturi corrupti esse labore saepe totam! Quis, velit reprehenderit cupiditate impedit voluptatibus dignissimos quos quaerat omnis, repellendus beatae, possimus corrupti harum eos qui dolorum. A eum, ipsam rerum dignissimos rem blanditiis, ut unde et libero quia corrupti natus optio exercitationem recusandae explicabo! Eligendi voluptates tenetur vel reprehenderit ex vitae non soluta tempora ducimus doloremque itaque obcaecati accusantium iusto amet eos dolorem fugit nam, rem, aspernatur repudiandae. Magnam illo, beatae deleniti eos ducimus aperiam dolor laudantium expedita quae optio sed temporibus laboriosam enim tenetur. Minima incidunt quod natus fuga facilis maiores dicta ipsa explicabo labore enim accusantium recusandae ratione quibusdam eum unde porro harum nam at, vero saepe, ducimus culpa veniam? Repudiandae asperiores, voluptatum maiores, quo, accusamus architecto voluptatibus similique excepturi sunt cumque vitae in repellat illo tenetur iusto ratione ducimus. Officia magni maxime consequatur! Optio excepturi eaque quia molestias omnis, illo ad nam eligendi veritatis porro quae voluptatibus dolorum sunt accusamus consequatur cumque non dignissimos delectus consectetur odio modi deserunt obcaecati. Beatae, magni nemo et doloremque porro harum eius maxime esse dolore dolor saepe, sapiente veritatis nam, quibusdam amet ex cum officiis velit rem consequuntur ipsam obcaecati aliquid nulla praesentium. Officia accusantium nostrum magnam maiores quia placeat. Explicabo ducimus asperiores aspernatur similique eum dolores doloremque, facilis provident aut cumque aliquam cum perferendis ipsa harum quae, quia laboriosam libero iste voluptas architecto sint rerum. Iste facilis ad aliquid, quod sapiente ex tempore dolorum molestiae tempora cumque autem! Ea numquam maiores, voluptas, aliquid quos aliquam corporis voluptatem provident quam qui architecto culpa unde rerum tenetur minus ducimus odio voluptatum, voluptatibus repudiandae quis libero laboriosam possimus nulla? Assumenda odio, et modi sapiente libero dolores enim aperiam corrupti officia animi praesentium! Facere praesentium quod tenetur cupiditate. Doloremque consectetur animi repudiandae veritatis, dolorum odio consequuntur, vero eum impedit ipsam quaerat. Dolore voluptatum magnam necessitatibus esse. Nulla vitae et aliquid, eum placeat consectetur, vel dolor sapiente esse inventore cupiditate quae culpa quas. Doloremque odio et nemo dignissimos iusto error nostrum doloribus voluptates tempore dolorem assumenda, illo illum ea vero cumque asperiores dicta aliquid pariatur exercitationem nam eveniet tenetur perferendis culpa eum? Dignissimos quae neque labore doloremque numquam suscipit architecto maiores consequuntur sapiente quam repellat eos sed nobis distinctio, alias dolores, minus reprehenderit temporibus iste culpa inventore atque cumque! Doloribus facilis sed libero adipisci quae facere recusandae dolor culpa ipsam sapiente assumenda neque distinctio, autem aspernatur error dolore quidem, fugit, ea aliquam. Accusamus ratione quos incidunt fugiat, eum eaque dolorum atque sint facere nobis. Ullam, recusandae? Necessitatibus quos tenetur accusantium nobis id similique aliquam et sapiente, consequuntur recusandae! Ipsum, odit necessitatibus!
+            </div>
+          </div>
+          <div>
+            <h2 id='step-2'>
+              2. Determine fuzzy sets.
+            </h2>
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, excepturi. Neque architecto quis, possimus deleniti nobis nostrum? Error quis ducimus recusandae esse tempora perspiciatis velit et assumenda, voluptates dolore deleniti, aliquam sit odio laudantium quasi quae corporis dignissimos, dolores repellendus fugit alias quas sunt. Officiis et voluptate dolores ipsam assumenda dolor rem, earum sed doloremque! Deserunt enim aperiam reiciendis neque, vitae dolorem quisquam quos quidem doloribus est numquam tempore ab, pariatur, laboriosam possimus in voluptatibus et excepturi corrupti esse labore saepe totam! Quis, velit reprehenderit cupiditate impedit voluptatibus dignissimos quos quaerat omnis, repellendus beatae, possimus corrupti harum eos qui dolorum. A eum, ipsam rerum dignissimos rem blanditiis, ut unde et libero quia corrupti natus optio exercitationem recusandae explicabo! Eligendi voluptates tenetur vel reprehenderit ex vitae non soluta tempora ducimus doloremque itaque obcaecati accusantium iusto amet eos dolorem fugit nam, rem, aspernatur repudiandae. Magnam illo, beatae deleniti eos ducimus aperiam dolor laudantium expedita quae optio sed temporibus laboriosam enim tenetur. Minima incidunt quod natus fuga facilis maiores dicta ipsa explicabo labore enim accusantium recusandae ratione quibusdam eum unde porro harum nam at, vero saepe, ducimus culpa veniam? Repudiandae asperiores, voluptatum maiores, quo, accusamus architecto voluptatibus similique excepturi sunt cumque vitae in repellat illo tenetur iusto ratione ducimus. Officia magni maxime consequatur! Optio excepturi eaque quia molestias omnis, illo ad nam eligendi veritatis porro quae voluptatibus dolorum sunt accusamus consequatur cumque non dignissimos delectus consectetur odio modi deserunt obcaecati. Beatae, magni nemo et doloremque porro harum eius maxime esse dolore dolor saepe, sapiente veritatis nam, quibusdam amet ex cum officiis velit rem consequuntur ipsam obcaecati aliquid nulla praesentium. Officia accusantium nostrum magnam maiores quia placeat. Explicabo ducimus asperiores aspernatur similique eum dolores doloremque, facilis provident aut cumque aliquam cum perferendis ipsa harum quae, quia laboriosam libero iste voluptas architecto sint rerum. Iste facilis ad aliquid, quod sapiente ex tempore dolorum molestiae tempora cumque autem! Ea numquam maiores, voluptas, aliquid quos aliquam corporis voluptatem provident quam qui architecto culpa unde rerum tenetur minus ducimus odio voluptatum, voluptatibus repudiandae quis libero laboriosam possimus nulla? Assumenda odio, et modi sapiente libero dolores enim aperiam corrupti officia animi praesentium! Facere praesentium quod tenetur cupiditate. Doloremque consectetur animi repudiandae veritatis, dolorum odio consequuntur, vero eum impedit ipsam quaerat. Dolore voluptatum magnam necessitatibus esse. Nulla vitae et aliquid, eum placeat consectetur, vel dolor sapiente esse inventore cupiditate quae culpa quas. Doloremque odio et nemo dignissimos iusto error nostrum doloribus voluptates tempore dolorem assumenda, illo illum ea vero cumque asperiores dicta aliquid pariatur exercitationem nam eveniet tenetur perferendis culpa eum? Dignissimos quae neque labore doloremque numquam suscipit architecto maiores consequuntur sapiente quam repellat eos sed nobis distinctio, alias dolores, minus reprehenderit temporibus iste culpa inventore atque cumque! Doloribus facilis sed libero adipisci quae facere recusandae dolor culpa ipsam sapiente assumenda neque distinctio, autem aspernatur error dolore quidem, fugit, ea aliquam. Accusamus ratione quos incidunt fugiat, eum eaque dolorum atque sint facere nobis. Ullam, recusandae? Necessitatibus quos tenetur accusantium nobis id similique aliquam et sapiente, consequuntur recusandae! Ipsum, odit necessitatibus!
+            </div>
+          </div>
+          <div>
+            <h2 id='step-3'>
+              3. Elicit and construct fuzzy rules.
+            </h2>
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, excepturi. Neque architecto quis, possimus deleniti nobis nostrum? Error quis ducimus recusandae esse tempora perspiciatis velit et assumenda, voluptates dolore deleniti, aliquam sit odio laudantium quasi quae corporis dignissimos, dolores repellendus fugit alias quas sunt. Officiis et voluptate dolores ipsam assumenda dolor rem, earum sed doloremque! Deserunt enim aperiam reiciendis neque, vitae dolorem quisquam quos quidem doloribus est numquam tempore ab, pariatur, laboriosam possimus in voluptatibus et excepturi corrupti esse labore saepe totam! Quis, velit reprehenderit cupiditate impedit voluptatibus dignissimos quos quaerat omnis, repellendus beatae, possimus corrupti harum eos qui dolorum. A eum, ipsam rerum dignissimos rem blanditiis, ut unde et libero quia corrupti natus optio exercitationem recusandae explicabo! Eligendi voluptates tenetur vel reprehenderit ex vitae non soluta tempora ducimus doloremque itaque obcaecati accusantium iusto amet eos dolorem fugit nam, rem, aspernatur repudiandae. Magnam illo, beatae deleniti eos ducimus aperiam dolor laudantium expedita quae optio sed temporibus laboriosam enim tenetur. Minima incidunt quod natus fuga facilis maiores dicta ipsa explicabo labore enim accusantium recusandae ratione quibusdam eum unde porro harum nam at, vero saepe, ducimus culpa veniam? Repudiandae asperiores, voluptatum maiores, quo, accusamus architecto voluptatibus similique excepturi sunt cumque vitae in repellat illo tenetur iusto ratione ducimus. Officia magni maxime consequatur! Optio excepturi eaque quia molestias omnis, illo ad nam eligendi veritatis porro quae voluptatibus dolorum sunt accusamus consequatur cumque non dignissimos delectus consectetur odio modi deserunt obcaecati. Beatae, magni nemo et doloremque porro harum eius maxime esse dolore dolor saepe, sapiente veritatis nam, quibusdam amet ex cum officiis velit rem consequuntur ipsam obcaecati aliquid nulla praesentium. Officia accusantium nostrum magnam maiores quia placeat. Explicabo ducimus asperiores aspernatur similique eum dolores doloremque, facilis provident aut cumque aliquam cum perferendis ipsa harum quae, quia laboriosam libero iste voluptas architecto sint rerum. Iste facilis ad aliquid, quod sapiente ex tempore dolorum molestiae tempora cumque autem! Ea numquam maiores, voluptas, aliquid quos aliquam corporis voluptatem provident quam qui architecto culpa unde rerum tenetur minus ducimus odio voluptatum, voluptatibus repudiandae quis libero laboriosam possimus nulla? Assumenda odio, et modi sapiente libero dolores enim aperiam corrupti officia animi praesentium! Facere praesentium quod tenetur cupiditate. Doloremque consectetur animi repudiandae veritatis, dolorum odio consequuntur, vero eum impedit ipsam quaerat. Dolore voluptatum magnam necessitatibus esse. Nulla vitae et aliquid, eum placeat consectetur, vel dolor sapiente esse inventore cupiditate quae culpa quas. Doloremque odio et nemo dignissimos iusto error nostrum doloribus voluptates tempore dolorem assumenda, illo illum ea vero cumque asperiores dicta aliquid pariatur exercitationem nam eveniet tenetur perferendis culpa eum? Dignissimos quae neque labore doloremque numquam suscipit architecto maiores consequuntur sapiente quam repellat eos sed nobis distinctio, alias dolores, minus reprehenderit temporibus iste culpa inventore atque cumque! Doloribus facilis sed libero adipisci quae facere recusandae dolor culpa ipsam sapiente assumenda neque distinctio, autem aspernatur error dolore quidem, fugit, ea aliquam. Accusamus ratione quos incidunt fugiat, eum eaque dolorum atque sint facere nobis. Ullam, recusandae? Necessitatibus quos tenetur accusantium nobis id similique aliquam et sapiente, consequuntur recusandae! Ipsum, odit necessitatibus!
+            </div>
+          </div>
+          <div>
+            <h2 id='step-4'>
+              4. Encode the fuzzy sets, fuzzy rules, and procedures to perform fuzzy inference into the expert system.
+            </h2>
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, excepturi. Neque architecto quis, possimus deleniti nobis nostrum? Error quis ducimus recusandae esse tempora perspiciatis velit et assumenda, voluptates dolore deleniti, aliquam sit odio laudantium quasi quae corporis dignissimos, dolores repellendus fugit alias quas sunt. Officiis et voluptate dolores ipsam assumenda dolor rem, earum sed doloremque! Deserunt enim aperiam reiciendis neque, vitae dolorem quisquam quos quidem doloribus est numquam tempore ab, pariatur, laboriosam possimus in voluptatibus et excepturi corrupti esse labore saepe totam! Quis, velit reprehenderit cupiditate impedit voluptatibus dignissimos quos quaerat omnis, repellendus beatae, possimus corrupti harum eos qui dolorum. A eum, ipsam rerum dignissimos rem blanditiis, ut unde et libero quia corrupti natus optio exercitationem recusandae explicabo! Eligendi voluptates tenetur vel reprehenderit ex vitae non soluta tempora ducimus doloremque itaque obcaecati accusantium iusto amet eos dolorem fugit nam, rem, aspernatur repudiandae. Magnam illo, beatae deleniti eos ducimus aperiam dolor laudantium expedita quae optio sed temporibus laboriosam enim tenetur. Minima incidunt quod natus fuga facilis maiores dicta ipsa explicabo labore enim accusantium recusandae ratione quibusdam eum unde porro harum nam at, vero saepe, ducimus culpa veniam? Repudiandae asperiores, voluptatum maiores, quo, accusamus architecto voluptatibus similique excepturi sunt cumque vitae in repellat illo tenetur iusto ratione ducimus. Officia magni maxime consequatur! Optio excepturi eaque quia molestias omnis, illo ad nam eligendi veritatis porro quae voluptatibus dolorum sunt accusamus consequatur cumque non dignissimos delectus consectetur odio modi deserunt obcaecati. Beatae, magni nemo et doloremque porro harum eius maxime esse dolore dolor saepe, sapiente veritatis nam, quibusdam amet ex cum officiis velit rem consequuntur ipsam obcaecati aliquid nulla praesentium. Officia accusantium nostrum magnam maiores quia placeat. Explicabo ducimus asperiores aspernatur similique eum dolores doloremque, facilis provident aut cumque aliquam cum perferendis ipsa harum quae, quia laboriosam libero iste voluptas architecto sint rerum. Iste facilis ad aliquid, quod sapiente ex tempore dolorum molestiae tempora cumque autem! Ea numquam maiores, voluptas, aliquid quos aliquam corporis voluptatem provident quam qui architecto culpa unde rerum tenetur minus ducimus odio voluptatum, voluptatibus repudiandae quis libero laboriosam possimus nulla? Assumenda odio, et modi sapiente libero dolores enim aperiam corrupti officia animi praesentium! Facere praesentium quod tenetur cupiditate. Doloremque consectetur animi repudiandae veritatis, dolorum odio consequuntur, vero eum impedit ipsam quaerat. Dolore voluptatum magnam necessitatibus esse. Nulla vitae et aliquid, eum placeat consectetur, vel dolor sapiente esse inventore cupiditate quae culpa quas. Doloremque odio et nemo dignissimos iusto error nostrum doloribus voluptates tempore dolorem assumenda, illo illum ea vero cumque asperiores dicta aliquid pariatur exercitationem nam eveniet tenetur perferendis culpa eum? Dignissimos quae neque labore doloremque numquam suscipit architecto maiores consequuntur sapiente quam repellat eos sed nobis distinctio, alias dolores, minus reprehenderit temporibus iste culpa inventore atque cumque! Doloribus facilis sed libero adipisci quae facere recusandae dolor culpa ipsam sapiente assumenda neque distinctio, autem aspernatur error dolore quidem, fugit, ea aliquam. Accusamus ratione quos incidunt fugiat, eum eaque dolorum atque sint facere nobis. Ullam, recusandae? Necessitatibus quos tenetur accusantium nobis id similique aliquam et sapiente, consequuntur recusandae! Ipsum, odit necessitatibus!
+            </div>
+          </div>
+          <div>
+            <h2 id='step-5'>
+              5. Evaluate and tune the system.
+            </h2>
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, excepturi. Neque architecto quis, possimus deleniti nobis nostrum? Error quis ducimus recusandae esse tempora perspiciatis velit et assumenda, voluptates dolore deleniti, aliquam sit odio laudantium quasi quae corporis dignissimos, dolores repellendus fugit alias quas sunt. Officiis et voluptate dolores ipsam assumenda dolor rem, earum sed doloremque! Deserunt enim aperiam reiciendis neque, vitae dolorem quisquam quos quidem doloribus est numquam tempore ab, pariatur, laboriosam possimus in voluptatibus et excepturi corrupti esse labore saepe totam! Quis, velit reprehenderit cupiditate impedit voluptatibus dignissimos quos quaerat omnis, repellendus beatae, possimus corrupti harum eos qui dolorum. A eum, ipsam rerum dignissimos rem blanditiis, ut unde et libero quia corrupti natus optio exercitationem recusandae explicabo! Eligendi voluptates tenetur vel reprehenderit ex vitae non soluta tempora ducimus doloremque itaque obcaecati accusantium iusto amet eos dolorem fugit nam, rem, aspernatur repudiandae. Magnam illo, beatae deleniti eos ducimus aperiam dolor laudantium expedita quae optio sed temporibus laboriosam enim tenetur. Minima incidunt quod natus fuga facilis maiores dicta ipsa explicabo labore enim accusantium recusandae ratione quibusdam eum unde porro harum nam at, vero saepe, ducimus culpa veniam? Repudiandae asperiores, voluptatum maiores, quo, accusamus architecto voluptatibus similique excepturi sunt cumque vitae in repellat illo tenetur iusto ratione ducimus. Officia magni maxime consequatur! Optio excepturi eaque quia molestias omnis, illo ad nam eligendi veritatis porro quae voluptatibus dolorum sunt accusamus consequatur cumque non dignissimos delectus consectetur odio modi deserunt obcaecati. Beatae, magni nemo et doloremque porro harum eius maxime esse dolore dolor saepe, sapiente veritatis nam, quibusdam amet ex cum officiis velit rem consequuntur ipsam obcaecati aliquid nulla praesentium. Officia accusantium nostrum magnam maiores quia placeat. Explicabo ducimus asperiores aspernatur similique eum dolores doloremque, facilis provident aut cumque aliquam cum perferendis ipsa harum quae, quia laboriosam libero iste voluptas architecto sint rerum. Iste facilis ad aliquid, quod sapiente ex tempore dolorum molestiae tempora cumque autem! Ea numquam maiores, voluptas, aliquid quos aliquam corporis voluptatem provident quam qui architecto culpa unde rerum tenetur minus ducimus odio voluptatum, voluptatibus repudiandae quis libero laboriosam possimus nulla? Assumenda odio, et modi sapiente libero dolores enim aperiam corrupti officia animi praesentium! Facere praesentium quod tenetur cupiditate. Doloremque consectetur animi repudiandae veritatis, dolorum odio consequuntur, vero eum impedit ipsam quaerat. Dolore voluptatum magnam necessitatibus esse. Nulla vitae et aliquid, eum placeat consectetur, vel dolor sapiente esse inventore cupiditate quae culpa quas. Doloremque odio et nemo dignissimos iusto error nostrum doloribus voluptates tempore dolorem assumenda, illo illum ea vero cumque asperiores dicta aliquid pariatur exercitationem nam eveniet tenetur perferendis culpa eum? Dignissimos quae neque labore doloremque numquam suscipit architecto maiores consequuntur sapiente quam repellat eos sed nobis distinctio, alias dolores, minus reprehenderit temporibus iste culpa inventore atque cumque! Doloribus facilis sed libero adipisci quae facere recusandae dolor culpa ipsam sapiente assumenda neque distinctio, autem aspernatur error dolore quidem, fugit, ea aliquam. Accusamus ratione quos incidunt fugiat, eum eaque dolorum atque sint facere nobis. Ullam, recusandae? Necessitatibus quos tenetur accusantium nobis id similique aliquam et sapiente, consequuntur recusandae! Ipsum, odit necessitatibus!
+            </div>
+          </div>
+        </>}
+      </article>
     </main>
   )
 }
