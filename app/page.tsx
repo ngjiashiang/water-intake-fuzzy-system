@@ -39,7 +39,7 @@ export default function Home() {
             <input type="text" className='py-1 px-2 rounded-lg' id="water-intake-input" placeholder='cups'/>
           </div>
           <div className='w-full flex justify-between'>
-            <label htmlFor="environment-temp-input">What's your environment temperature?</label>
+            <label htmlFor="environment-temp-input">What is your environment temperature?</label>
             <input type="text" className='py-1 px-2 rounded-lg' id="environment-temp-input" placeholder='°C'/>
           </div>
           <div className='w-full flex justify-between'>
