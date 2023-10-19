@@ -93,7 +93,7 @@ export default function Home() {
           </div>
           <div>
             <h2 id='step-1'>
-              1. Specify the problem and define linguistic variables.
+              1. Specify the problem and define linguistic variables..
             </h2>
             <ProblemAndLinguisticVariable />
           </div>
