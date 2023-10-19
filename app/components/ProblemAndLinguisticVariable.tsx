@@ -39,10 +39,10 @@ export default function ProblemAndLinguisticVariable() {
         to keep them adequately hydrated and healthy.
       </div>
       <h3>Linguistic variables and thier ranges:</h3>
-      <div className="flex flex-col justify-around lg:flex-row space-y-6 lg:space-y-0 lg:space-x-6">
+      <div className="flex flex-col flex-wrap justify-around lg:flex-row space-y-6 lg:space-y-0 lg:space-x-6">
         <div>
           <h4 className="text-center">Environment Temperature</h4>
-          <table className="max-w-lg table-auto bg-white not-prose">
+          <table className="max-w-lg mx-auto table-auto bg-white not-prose">
             <caption className="caption-bottom mt-4">Table 1: Linguistic value and numerical range for environment temperature.</caption>
             <thead className="bg-gray-800 text-white">
               <tr>
@@ -72,7 +72,7 @@ export default function ProblemAndLinguisticVariable() {
         </div>
         <div>
           <h4 className="text-center">Current Water Intake</h4>
-          <table className="max-w-lg table-auto bg-white not-prose">
+          <table className="max-w-lg mx-auto table-auto bg-white not-prose">
             <caption className="caption-bottom mt-4">Table 2: Linguistic value and numerical range for current water intake.</caption>
             <thead className="bg-gray-800 text-white">
               <tr>
@@ -102,7 +102,7 @@ export default function ProblemAndLinguisticVariable() {
         </div>
         <div>
           <h4 className="text-center">Total Steps Taken</h4>
-          <table className="max-w-lg table-auto bg-white not-prose">
+          <table className="max-w-lg mx-auto table-auto bg-white not-prose">
             <caption className="caption-bottom mt-4">Table 3: Linguistic value and numerical range for total steps taken.</caption>
             <thead className="bg-gray-800 text-white">
               <tr>
