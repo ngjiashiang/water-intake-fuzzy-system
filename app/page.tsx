@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { FaGlassWaterDroplet } from "react-icons/fa6";
 import Switch from '@mui/material/Switch';
 import { useState } from 'react';
-import ProblemAndLinguisticVariable from './Components/ProblemAndLinguisticVariable';
+import ProblemAndLinguisticVariable from '@components/ProblemAndLinguisticVariable';
 
 export default function Home() {
   const [showSteps, setShowSteps] = useState(true);
@@ -93,7 +93,7 @@ export default function Home() {
           </div>
           <div>
             <h2 id='step-1'>
-              1. Specify the problem and define linguistic variables..
+              1. Specify the problem and define linguistic variables.
             </h2>
             <ProblemAndLinguisticVariable />
           </div>
