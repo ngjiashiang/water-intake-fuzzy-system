@@ -17,3 +17,10 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+
+@layer components {
+  .highlighted {
+    @apply px-1 py-0.5 rounded-lg bg-amber-100 text-black hover:bg-black hover:text-amber-100 focus:bg-black focus:text-amber-100;
+  }
+}
