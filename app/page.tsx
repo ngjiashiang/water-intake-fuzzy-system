@@ -11,15 +11,15 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen flex justify-center py-6">
-      <article className="prose flex flex-col space-y-6 w-11/12 lg:max-w-screen-2xl">
+    <main className="dark:bg-slate-800 min-h-screen flex justify-center py-6">
+      <article className="prose dark:prose-invert flex flex-col space-y-6 w-11/12 lg:max-w-screen-2xl">
         <div className='text-center'>
           <h1>
             Hydration Assistant <FaGlassWaterDroplet color={'rgb(96 165 250)'} size={'25px'} className="inline my-auto"/>
           </h1>
           An expert fuzzy system to recommend how much water should a person drink to stay healthy and hydrated, based on thier
           <div className='mx-auto text-left w-max block'>
-            <ul className='marker:text-black list-outside'>
+            <ul className='dark:marker:text-white marker:text-black list-outside'>
               <li>
                 Environment Temperature
               </li>
@@ -48,7 +48,7 @@ export default function Home() {
           </div>
         </div>
         <div className='text-center'>
-          You still need to drink <span className='bg-amber-100 py-0.5 px-2 rounded-lg'>XX cups / XX ml of water</span> today
+          You still need to drink <span className='text-black bg-amber-100 py-0.5 px-2 rounded-lg'>XX cups / XX ml of water</span> today
         </div>
         <div className='text-center pt-4'>
           <span>Hide workings</span><Switch className='mx-6' defaultChecked onChange={handleChange}/><span>Show workings</span>
@@ -62,27 +62,27 @@ export default function Home() {
             <p>Our process of developing this system follows the steps given below:</p>
             <ol>
               <li>
-                <a className='bg-amber-100 px-2 py-0.5 rounded-lg block lg:inline hover:bg-black hover:text-amber-100 focus:bg-black focus:text-amber-100' href="#step-1" >
+                <a className='bg-amber-100 text-black px-2 py-0.5 rounded-lg block lg:inline hover:bg-black hover:text-amber-100 focus:bg-black focus:text-amber-100' href="#step-1" >
                   Specify the problem and define linguistic variables.
                 </a> 
               </li>
               <li>
-                <a className='bg-amber-100 px-2 py-0.5 rounded-lg block lg:inline hover:bg-black hover:text-amber-100 focus:bg-black focus:text-amber-100' href="#step-2">
+                <a className='bg-amber-100 text-black px-2 py-0.5 rounded-lg block lg:inline hover:bg-black hover:text-amber-100 focus:bg-black focus:text-amber-100' href="#step-2">
                   Determine fuzzy sets.
                 </a>
               </li>  
               <li>
-                <a className='bg-amber-100 px-2 py-0.5 rounded-lg block lg:inline hover:bg-black hover:text-amber-100 focus:bg-black focus:text-amber-100' href="#step-3">
+                <a className='bg-amber-100 text-black px-2 py-0.5 rounded-lg block lg:inline hover:bg-black hover:text-amber-100 focus:bg-black focus:text-amber-100' href="#step-3">
                   Elicit and construct fuzzy rules.
                 </a>
               </li>  
               <li>
-                <a className='bg-amber-100 px-2 py-0.5 rounded-lg block lg:inline hover:bg-black hover:text-amber-100 focus:bg-black focus:text-amber-100' href="#step-4">
+                <a className='bg-amber-100 text-black px-2 py-0.5 rounded-lg block lg:inline hover:bg-black hover:text-amber-100 focus:bg-black focus:text-amber-100' href="#step-4">
                   Encode the fuzzy sets, fuzzy rules, and procedures to perform fuzzy inference into the expert system.
                 </a>
               </li>  
               <li>
-                <a className='bg-amber-100 px-2 py-0.5 rounded-lg block lg:inline hover:bg-black hover:text-amber-100 focus:bg-black focus:text-amber-100' href="#step-5">
+                <a className='bg-amber-100 text-black px-2 py-0.5 rounded-lg block lg:inline hover:bg-black hover:text-amber-100 focus:bg-black focus:text-amber-100' href="#step-5">
                   Evaluate and tune the system.
                 </a>
               </li>  
