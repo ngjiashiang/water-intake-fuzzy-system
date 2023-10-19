@@ -1,6 +1,18 @@
 "use client";
 
-export default function ProblemAndLinguisticVariable() {
+interface ProblemAndLinguisticVariableProps {
+  temperature: number;
+  water: number;
+  steps: number;
+  dataIsSet: boolean;
+}
+
+export default function ProblemAndLinguisticVariable({
+  temperature,
+  water,
+  steps,
+  dataIsSet = false
+}: ProblemAndLinguisticVariableProps) {
   return (
     <div>
       <h3>Problem:</h3>
@@ -46,26 +58,40 @@ export default function ProblemAndLinguisticVariable() {
             <caption className="caption-bottom mt-4">Table 1: Linguistic value and numerical range for environment temperature.</caption>
             <thead className="bg-gray-800 text-white">
               <tr>
-                <th className="text-left py-3 px-4 uppercase font-semibold text-sm">Linguistic Value</th>
-                <th className="text-left py-3 px-4 uppercase font-semibold text-sm">Numerical Range</th>
+                <th className="text-right py-3 px-4 uppercase font-semibold text-sm">Linguistic Value</th>
+                <th className="text-right py-3 px-4 uppercase font-semibold text-sm">Numerical Range</th>
               </tr>
             </thead>
             <tbody className="text-gray-700">
-              <tr>
-                <td className="text-left py-3 px-4">Lian</td>
-                <td className="py-3 px-4 text-right">Smith</td>
+              <tr className={(dataIsSet && temperature <= 15) ? "border-2 border-black bg-amber-100" : ""}>
+                <td className="text-left py-3 px-4">Cold</td>
+                <td className="py-3 px-4 text-right">
+                  ≤ 15°C
+                </td>
               </tr>
-              <tr className="bg-gray-100">
-                <td className="text-left py-3 px-4">Emma</td>
-                <td className="py-3 px-4 text-right">Johnson</td>
+              <tr className={(dataIsSet && temperature >= 10 && temperature <= 25) ? "border-2 border-black bg-amber-100" : ""}>
+                <td className="text-left py-3 px-4">Cool</td>
+                <td className="py-3 px-4 text-right">
+                  10°C to 25°C
+                </td>
               </tr>
-              <tr>
-                <td className="text-left py-3 px-4">Oliver</td>
-                <td className="py-3 px-4 text-right">Williams</td>
+              <tr className={(dataIsSet && temperature >= 20 && temperature <= 30) ? "border-2 border-black bg-amber-100" : ""}>
+                <td className="text-left py-3 px-4">Moderate</td>
+                <td className="py-3 px-4 text-right">
+                  20°C to 30°C
+                </td>
               </tr>
-              <tr className="bg-gray-100">
-                <td className="text-left py-3 px-4">Isabella</td>
-                <td className="py-3 px-4 text-right">Brown</td>
+              <tr className={(dataIsSet && temperature >= 25 && temperature <= 35) ? "border-2 border-black bg-amber-100" : ""}>
+                <td className="text-left py-3 px-4">Warm</td>
+                <td className="py-3 px-4 text-right">
+                  25°C to 35°C
+                </td>
+              </tr>
+              <tr className={(dataIsSet && temperature >= 30) ? "border-2 border-black bg-amber-100" : ""}>
+                <td className="text-left py-3 px-4">Hot</td>
+                <td className="py-3 px-4 text-right">
+                  ≥ 30°C
+                </td>
               </tr>
             </tbody>
           </table>
@@ -76,26 +102,40 @@ export default function ProblemAndLinguisticVariable() {
             <caption className="caption-bottom mt-4">Table 2: Linguistic value and numerical range for current water intake.</caption>
             <thead className="bg-gray-800 text-white">
               <tr>
-                <th className="text-left py-3 px-4 uppercase font-semibold text-sm">Linguistic Value</th>
-                <th className="text-left py-3 px-4 uppercase font-semibold text-sm">Numerical Range</th>
+                <th className="text-right py-3 px-4 uppercase font-semibold text-sm">Linguistic Value</th>
+                <th className="text-right py-3 px-4 uppercase font-semibold text-sm">Numerical Range</th>
               </tr>
             </thead>
             <tbody className="text-gray-700">
-              <tr>
-                <td className="text-left py-3 px-4">Lian</td>
-                <td className="py-3 px-4 text-right">Smith</td>
+              <tr className={(dataIsSet && water >= 0 && water <= 500) ? "border-2 border-black bg-amber-100" : ""}>
+                <td className="text-left py-3 px-4">Very Low</td>
+                <td className="py-3 px-4 text-right">
+                  0mℓ to 500mℓ
+                </td>
               </tr>
-              <tr className="bg-gray-100">
-                <td className="text-left py-3 px-4">Emma</td>
-                <td className="py-3 px-4 text-right">Johnson</td>
+              <tr className={(dataIsSet && water >= 400 && water <= 800) ? "border-2 border-black bg-amber-100" : ""}>
+                <td className="text-left py-3 px-4">Low</td>
+                <td className="py-3 px-4 text-right">
+                  400mℓ to 800mℓ
+                </td>
               </tr>
-              <tr>
-                <td className="text-left py-3 px-4">Oliver</td>
-                <td className="py-3 px-4 text-right">Williams</td>
+              <tr className={(dataIsSet && water >= 700 && water <= 1200) ? "border-2 border-black bg-amber-100" : ""}>
+                <td className="text-left py-3 px-4">Moderate</td>
+                <td className="py-3 px-4 text-right">
+                  700mℓ to 1200mℓ
+                </td>
               </tr>
-              <tr className="bg-gray-100">
-                <td className="text-left py-3 px-4">Isabella</td>
-                <td className="py-3 px-4 text-right">Brown</td>
+              <tr className={(dataIsSet && water >= 1000 && water <= 1800) ? "border-2 border-black bg-amber-100" : ""}>
+                <td className="text-left py-3 px-4">High</td>
+                <td className="py-3 px-4 text-right">
+                  1000mℓ to 1800mℓ
+                </td>
+              </tr>
+              <tr className={(dataIsSet && water >= 1500) ? "border-2 border-black bg-amber-100" : ""}>
+                <td className="text-left py-3 px-4">Hot</td>
+                <td className="py-3 px-4 text-right">
+                  ≥ 1500mℓ
+                </td>
               </tr>
             </tbody>
           </table>
@@ -106,29 +146,51 @@ export default function ProblemAndLinguisticVariable() {
             <caption className="caption-bottom mt-4">Table 3: Linguistic value and numerical range for total steps taken.</caption>
             <thead className="bg-gray-800 text-white">
               <tr>
-                <th className="text-left py-3 px-4 uppercase font-semibold text-sm">Linguistic Value</th>
-                <th className="text-left py-3 px-4 uppercase font-semibold text-sm">Numerical Range</th>
+                <th className="text-right py-3 px-4 uppercase font-semibold text-sm">Linguistic Value</th>
+                <th className="text-right py-3 px-4 uppercase font-semibold text-sm">Numerical Range</th>
               </tr>
             </thead>
             <tbody className="text-gray-700">
-              <tr>
-                <td className="text-left py-3 px-4">Lian</td>
-                <td className="py-3 px-4 text-right">Smith</td>
+              <tr className={(dataIsSet && steps >= 0 && steps <= 2000) ? "border-2 border-black bg-amber-100" : ""}>
+                <td className="text-left py-3 px-4">Sedentary</td>
+                <td className="py-3 px-4 text-right">
+                  0 steps to 2000 steps
+                </td>
               </tr>
-              <tr className="bg-gray-100">
-                <td className="text-left py-3 px-4">Emma</td>
-                <td className="py-3 px-4 text-right">Johnson</td>
+              <tr className={(dataIsSet && steps >= 1500 && steps <= 5000) ? "border-2 border-black bg-amber-100" : ""}>
+                <td className="text-left py-3 px-4">Low Activity</td>
+                <td className="py-3 px-4 text-right">
+                  1500 steps to 5000 steps
+                </td>
               </tr>
-              <tr>
-                <td className="text-left py-3 px-4">Oliver</td>
-                <td className="py-3 px-4 text-right">Williams</td>
+              <tr className={(dataIsSet && steps >= 4000 && steps <= 8000) ? "border-2 border-black bg-amber-100" : ""}>
+                <td className="text-left py-3 px-4">Moderate Activity</td>
+                <td className="py-3 px-4 text-right">
+                  4000 steps to 8000 steps
+                </td>
               </tr>
-              <tr className="bg-gray-100">
-                <td className="text-left py-3 px-4">Isabella</td>
-                <td className="py-3 px-4 text-right">Brown</td>
+              <tr className={(dataIsSet && steps >= 7000 && steps <= 12000) ? "border-2 border-black bg-amber-100" : ""}>
+                <td className="text-left py-3 px-4">Active</td>
+                <td className="py-3 px-4 text-right">
+                  7000 steps to 12000 steps
+                </td>
+              </tr>
+              <tr className={(dataIsSet && steps >= 10000) ? "border-2 border-black bg-amber-100" : ""}>
+                <td className="text-left py-3 px-4">Very Active</td>
+                <td className="py-3 px-4 text-right">
+                  ≥ 10000 steps
+                </td>
               </tr>
             </tbody>
           </table>
+        </div>
+      </div>
+      <p>As we are trying to produce a drinking recommendation result based on the time this system is used, the time scope for these variables should be of <span className="font-bold italic">start of today till now</span>.</p>
+      <div>
+        <div className="font-semibold">Table legend:</div>
+        <div className="flex items-end space-x-6">
+          <div className="mt-2 h-12 w-32 bg-amber-100 border-2 border-black"></div>
+          <div>the categories that you belong in.</div>
         </div>
       </div>
     </div>
