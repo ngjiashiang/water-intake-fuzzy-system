@@ -11,7 +11,7 @@ export default function Home() {
   };
 
   return (
-    <main className="dark:bg-slate-800 min-h-screen flex justify-center py-6">
+    <main className="dark:bg-slate-700 min-h-screen flex justify-center py-6">
       <article className="prose dark:prose-invert flex flex-col space-y-6 w-11/12 lg:max-w-screen-2xl">
         <div className='text-center'>
           <h1>
@@ -34,24 +34,26 @@ export default function Home() {
           to contribute to <a className="text-blue-500 underline" href="https://sdgs.un.org/goals/goal3" target="_blank"><code>SDG 3: Ensure healthy lives and promote well-being for all at all ages</code></a>.
         </div>
         <div className='flex flex-col space-y-4 w-full lg:max-w-xl mx-auto py-6'>
-          <div className='w-full flex justify-between'>
+          <div className='w-full flex flex-col lg:flex-row justify-between'>
             <label htmlFor="water-intake-input">How much water did u drink so far?</label>
             <input type="text" className='py-1 px-2 rounded-lg' id="water-intake-input" placeholder='cups'/>
           </div>
-          <div className='w-full flex justify-between'>
+          <div className='w-full flex flex-col lg:flex-row justify-between'>
             <label htmlFor="environment-temp-input">What is your environment temperature?</label>
             <input type="text" className='py-1 px-2 rounded-lg' id="environment-temp-input" placeholder='°C'/>
           </div>
-          <div className='w-full flex justify-between'>
+          <div className='w-full flex flex-col lg:flex-row justify-between'>
             <label htmlFor="steps-taken-input">How many steps did u walked so far?</label>
             <input type="text" className='py-1 px-2 rounded-lg' id="steps-taken-input" />
           </div>
         </div>
         <div className='text-center'>
-          You still need to drink <span className='text-black bg-amber-100 py-0.5 px-2 rounded-lg'>XX cups / XX ml of water</span> today
+          You still need to drink<br /><span className='text-black bg-amber-100 py-0.5 px-2 rounded-lg'>XX cups / XX ml of water</span><br />today
         </div>
         <div className='text-center pt-4'>
-          <span>Hide workings</span><Switch className='mx-6' defaultChecked onChange={handleChange}/><span>Show workings</span>
+          <span>Hide workings</span>
+          <Switch className='mx-6' defaultChecked onChange={handleChange}/>
+          <span>Show workings</span>
         </div>
         {showSteps &&
         <>
