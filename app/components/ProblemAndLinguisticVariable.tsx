@@ -132,7 +132,7 @@ export default function ProblemAndLinguisticVariable({
                 </td>
               </tr>
               <tr className={(dataIsSet && water >= 1500) ? "border-2 border-black bg-amber-100" : ""}>
-                <td className="text-left py-3 px-4">Hot</td>
+                <td className="text-left py-3 px-4">Very High</td>
                 <td className="py-3 px-4 text-right">
                   ≥ 1500mℓ
                 </td>
