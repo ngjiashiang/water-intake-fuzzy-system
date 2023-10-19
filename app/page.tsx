@@ -49,7 +49,7 @@ export default function Home() {
                       .required("A number is required."),
         placeholder: "°C",
         style: { },
-        inputClassName: 'py-1 px-2 rounded-lg',
+        inputClassName: 'py-1 px-2 rounded-lg text-black',
         questionAndInputClassName: 'w-full flex flex-col lg:flex-row justify-between',
         errorMessageClassName: "mt-1 text-center italic"
       },
@@ -64,7 +64,7 @@ export default function Home() {
                       .required("A number is required."),
         placeholder: "mℓ",
         style: { },
-        inputClassName: 'py-1 px-2 rounded-lg',
+        inputClassName: 'py-1 px-2 rounded-lg text-black',
         questionAndInputClassName: 'w-full flex flex-col lg:flex-row justify-between',
         errorMessageClassName: "mt-1 text-center italic"
       },
@@ -79,7 +79,7 @@ export default function Home() {
                       .required("A number is required."),
         placeholder: "steps",
         style: { },
-        inputClassName: 'py-1 px-2 rounded-lg',
+        inputClassName: 'py-1 px-2 rounded-lg text-black',
         questionAndInputClassName: 'w-full flex flex-col lg:flex-row justify-between',
         errorMessageClassName: "mt-1 text-center italic"
       }
