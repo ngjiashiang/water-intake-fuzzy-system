@@ -34,7 +34,7 @@ export const TemperatureData = [
     {
         "name": 15,
         "Cold": 0,
-        "Cool": 0.5,
+        "Cool": 1,
         "Moderate": 0,
         "Warm": 0,
         "Hot": 0
@@ -50,7 +50,7 @@ export const TemperatureData = [
     {
         "name": 25,
         "Cold": 0,
-        "Cool": 0.5,
+        "Cool": 0,
         "Moderate": 1,
         "Warm": 0,
         "Hot": 0

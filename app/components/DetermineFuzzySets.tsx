@@ -144,109 +144,158 @@ export default function DeterminFuzzySets({
 
   return (
 		<div>
-			<div className="not-prose text-black grid lg:grid-cols-2 gap-y-4 lg:gap-x-4">
-				<div className="bg-white p-6 rounded-lg">
-					<div className="text-center font-semibold py-2">Environment Temperature</div>
-					<div className="text-left">degree of<br />membership</div>
-					<div>
-						<ResponsiveContainer width={"100%"} minWidth={"300px"} minHeight={"300px"}>
-							<LineChart
-								data={TemperatureData}
-							>
-								<CartesianGrid strokeDasharray="3 3" />
-								<XAxis dataKey="name">
-									<Label value="temperature, °C" offset={-5} position="insideBottomRight" />
-								</XAxis>
-								<YAxis/>
-								<Tooltip wrapperClassName={"opacity-80"} content={<CustomTooltip unit="°C"/>}/>
-								<Legend />
-								<Line dataKey="Cold" stroke="#264653" />
-								<Line dataKey="Cool" stroke="#2a9d8f" />
-								<Line dataKey="Moderate" stroke="#e9c46a" />
-								<Line dataKey="Warm" stroke="#f4a261" />
-								<Line dataKey="Hot" stroke="#e76f51" />
-							</LineChart>
-						</ResponsiveContainer>
+			<div className="rounded-lg p-4 border-4 border-slate-800 dark:border-slate-100">
+				<div className="mb-4 text-lg font-semibold">Our inputs:</div>
+				<div className="not-prose text-black grid lg:grid-cols-2 gap-y-4 lg:gap-x-4">
+					<div className="bg-white p-6 rounded-lg">
+						<div className="text-center font-semibold py-2">Environment Temperature</div>
+						<div className="text-left">degree of<br />membership</div>
+						<div>
+							<ResponsiveContainer width={"100%"} minWidth={"300px"} minHeight={"300px"}>
+								<LineChart
+									data={TemperatureData}
+								>
+									<CartesianGrid strokeDasharray="3 3" />
+									<XAxis dataKey="name">
+										<Label value="temperature, °C" offset={-5} position="insideBottomRight" />
+									</XAxis>
+									<YAxis/>
+									<Tooltip wrapperClassName={"opacity-80"} content={<CustomTooltip unit="°C"/>}/>
+									<Legend />
+									<Line dataKey="Cold" stroke="#264653" />
+									<Line dataKey="Cool" stroke="#2a9d8f" />
+									<Line dataKey="Moderate" stroke="#e9c46a" />
+									<Line dataKey="Warm" stroke="#f4a261" />
+									<Line dataKey="Hot" stroke="#e76f51" />
+								</LineChart>
+							</ResponsiveContainer>
+						</div>
+					</div>
+					<div className="bg-white p-6 rounded-lg">
+						<div className="text-center font-semibold py-2">Current Water Intake</div>
+						<div className="text-left">degree of<br />membership</div>
+						<div>
+							<ResponsiveContainer width={"100%"} minWidth={"300px"} minHeight={"300px"}>
+								<LineChart
+									data={WaterData}
+								>
+									<CartesianGrid strokeDasharray="3 3" />
+									<XAxis dataKey="name">
+										<Label value={"water intake, mℓ"} offset={-5} position="insideBottomRight"/>
+									</XAxis>
+									<YAxis/>
+									<Tooltip wrapperClassName={"opacity-80"} content={<CustomTooltip unit="mℓ"/>}/>
+									<Legend />
+									<Line dataKey="Very Low" stroke="#264653" />
+									<Line dataKey="Low" stroke="#2a9d8f" />
+									<Line dataKey="Moderate" stroke="#e9c46a" />
+									<Line dataKey="High" stroke="#f4a261" />
+									<Line dataKey="Very High" stroke="#e76f51" />
+								</LineChart>
+							</ResponsiveContainer>
+						</div>
+					</div>
+					<div className="bg-white p-6 rounded-lg">
+						<div className="text-center font-semibold py-2">Total Steps Taken</div>
+						<div className="text-left">degree of<br />membership</div>
+						<div>
+							<ResponsiveContainer width={"100%"} minWidth={"300px"} minHeight={"300px"}>
+								<LineChart
+									data={StepsData}
+								>
+									<CartesianGrid strokeDasharray="3 3" />
+									<XAxis dataKey="name">
+										<Label value={"steps"} offset={-5} position="insideBottomRight"/>
+									</XAxis>
+									<YAxis/>
+									<Tooltip wrapperClassName={"opacity-80"} content={<CustomTooltip unit=" steps"/>}/>
+									<Legend />
+									<Line dataKey="Sedentary" stroke="#264653" />
+									<Line dataKey="Low Activity" stroke="#2a9d8f" />
+									<Line dataKey="Moderate Activity" stroke="#e9c46a" />
+									<Line dataKey="Active" stroke="#f4a261" />
+									<Line dataKey="Very Active" stroke="#e76f51" />
+								</LineChart>
+							</ResponsiveContainer>
+						</div>
 					</div>
 				</div>
-				<div className="bg-white p-6 rounded-lg">
-					<div className="text-center font-semibold py-2">Current Water Intake</div>
-					<div className="text-left">degree of<br />membership</div>
-					<div>
-						<ResponsiveContainer width={"100%"} minWidth={"300px"} minHeight={"300px"}>
-							<LineChart
-								data={WaterData}
-							>
-								<CartesianGrid strokeDasharray="3 3" />
-								<XAxis dataKey="name">
-									<Label value={"water intake, mℓ"} offset={-5} position="insideBottomRight"/>
-								</XAxis>
-								<YAxis/>
-								<Tooltip wrapperClassName={"opacity-80"} content={<CustomTooltip unit="mℓ"/>}/>
-								<Legend />
-								<Line dataKey="Very Low" stroke="#264653" />
-								<Line dataKey="Low" stroke="#2a9d8f" />
-								<Line dataKey="Moderate" stroke="#e9c46a" />
-								<Line dataKey="High" stroke="#f4a261" />
-								<Line dataKey="Very High" stroke="#e76f51" />
-							</LineChart>
-						</ResponsiveContainer>
-					</div>
-				</div>
-				<div className="bg-white p-6 rounded-lg">
-					<div className="text-center font-semibold py-2">Total Steps Taken</div>
-					<div className="text-left">degree of<br />membership</div>
-					<div>
-						<ResponsiveContainer width={"100%"} minWidth={"300px"} minHeight={"300px"}>
-							<LineChart
-								data={StepsData}
-							>
-								<CartesianGrid strokeDasharray="3 3" />
-								<XAxis dataKey="name">
-									<Label value={"steps"} offset={-5} position="insideBottomRight"/>
-								</XAxis>
-								<YAxis/>
-								<Tooltip wrapperClassName={"opacity-80"} content={<CustomTooltip unit=" steps"/>}/>
-								<Legend />
-								<Line dataKey="Sedentary" stroke="#264653" />
-								<Line dataKey="Low Activity" stroke="#2a9d8f" />
-								<Line dataKey="Moderate Activity" stroke="#e9c46a" />
-								<Line dataKey="Active" stroke="#f4a261" />
-								<Line dataKey="Very Active" stroke="#e76f51" />
-							</LineChart>
-						</ResponsiveContainer>
+			</div>
+			<div className="mt-12 rounded-lg p-4 border-4 border-slate-800 dark:border-slate-100">
+				<div className="mb-4 text-lg font-semibold">Our output:</div>
+				<div className="not-prose text-black grid lg:grid-cols-1 gap-y-4 lg:gap-x-4">
+					<div className="bg-white p-6 rounded-lg">
+						<div className="text-center font-semibold py-2">Recomended Water Intake</div>
+						<div className="text-left">degree of<br />membership</div>
+						<div>
+							<ResponsiveContainer width={"100%"} minWidth={"300px"} minHeight={"300px"}>
+								<LineChart
+									data={WaterData}
+								>
+									<CartesianGrid strokeDasharray="3 3" />
+									<XAxis dataKey="name">
+										<Label value={"water intake, mℓ"} offset={-5} position="insideBottomRight"/>
+									</XAxis>
+									<YAxis/>
+									<Tooltip wrapperClassName={"opacity-80"} content={<CustomTooltip unit="mℓ"/>}/>
+									<Legend />
+									<Line dataKey="Very Low" stroke="#264653" />
+									<Line dataKey="Low" stroke="#2a9d8f" />
+									<Line dataKey="Moderate" stroke="#e9c46a" />
+									<Line dataKey="High" stroke="#f4a261" />
+									<Line dataKey="Very High" stroke="#e76f51" />
+								</LineChart>
+							</ResponsiveContainer>
+						</div>
 					</div>
 				</div>
 			</div>
 			<div>
 				<h3>Along with the graphs, lets also define the degree of membership as functions for easier calculation later on</h3>
-				<h4>Environment Temperature</h4>
-				<div className="flex flex-col lg:flex-row flex-wrap text-black lg:space-x-4 space-y-4">
-					<div className="hidden"></div>
-					<SetFunction title="Cold" functionsWithCondition={tempColdFunctionsWithCondition}/>
-					<SetFunction title="Cool" functionsWithCondition={tempCoolFunctionsWithCondition}/>
-					<SetFunction title="Moderate" functionsWithCondition={tempModerateFunctionsWithCondition}/>
-					<SetFunction title="Warm" functionsWithCondition={tempWarmFunctionsWithCondition}/>
-					<SetFunction title="Hot" functionsWithCondition={tempHotFunctionsWithCondition}/>
+				<div className="rounded-lg border-4 border-slate-800 dark:border-slate-100 p-4 mb-12">
+					<div className="text-lg font-semibold">Environment Temperature, °C</div>
+					<div className="flex flex-col lg:flex-row flex-wrap text-black lg:space-x-4 space-y-4">
+						<div className="hidden"></div>
+						<SetFunction title="Cold" functionsWithCondition={tempColdFunctionsWithCondition}/>
+						<SetFunction title="Cool" functionsWithCondition={tempCoolFunctionsWithCondition}/>
+						<SetFunction title="Moderate" functionsWithCondition={tempModerateFunctionsWithCondition}/>
+						<SetFunction title="Warm" functionsWithCondition={tempWarmFunctionsWithCondition}/>
+						<SetFunction title="Hot" functionsWithCondition={tempHotFunctionsWithCondition}/>
+					</div>
 				</div>
-				<h4 className="mt-20">Current Water Intake</h4>
-				<div className="flex flex-col lg:flex-row flex-wrap text-black lg:space-x-4 space-y-4">
-					<div className="hidden"></div>
-					<SetFunction title="Very Low" functionsWithCondition={waterVeryLowFunctionsWithCondition}/>
-					<SetFunction title="Low" functionsWithCondition={waterLowFunctionsWithCondition}/>
-					<SetFunction title="Moderate" functionsWithCondition={waterModerateFunctionsWithCondition}/>
-					<SetFunction title="High" functionsWithCondition={waterHighFunctionsWithCondition}/>
-					<SetFunction title="Very High" functionsWithCondition={waterVeryHighFunctionsWithCondition}/>
+				<div className="rounded-lg border-4 border-slate-800 dark:border-slate-100 p-4 mb-12">
+					<div className="text-lg font-semibold">Current Water Intake, mℓ</div>
+					<div className="flex flex-col lg:flex-row flex-wrap text-black lg:space-x-4 space-y-4">
+						<div className="hidden"></div>
+						<SetFunction title="Very Low" functionsWithCondition={waterVeryLowFunctionsWithCondition}/>
+						<SetFunction title="Low" functionsWithCondition={waterLowFunctionsWithCondition}/>
+						<SetFunction title="Moderate" functionsWithCondition={waterModerateFunctionsWithCondition}/>
+						<SetFunction title="High" functionsWithCondition={waterHighFunctionsWithCondition}/>
+						<SetFunction title="Very High" functionsWithCondition={waterVeryHighFunctionsWithCondition}/>
+					</div>
 				</div>
-				<h4 className="mt-20">Total Steps Taken</h4>
-				<div className="flex flex-col lg:flex-row flex-wrap text-black lg:space-x-4 space-y-4">
-					<div className="hidden"></div>
-					<SetFunction title="Sedentary" functionsWithCondition={stepsSedentaryFunctionsWithCondition}/>
-					<SetFunction title="Low Activity" functionsWithCondition={stepsLowActivityFunctionsWithCondition}/>
-					<SetFunction title="Moderate Activity" functionsWithCondition={stepsModerateActivityFunctionsWithCondition}/>
-					<SetFunction title="Active" functionsWithCondition={stepsActiveFunctionsWithCondition}/>
-					<SetFunction title="Very Active" functionsWithCondition={stepsVeryActiveFunctionsWithCondition}/>
+				<div className="rounded-lg border-4 border-slate-800 dark:border-slate-100 p-4 mb-12">
+					<div className="text-lg font-semibold">Total Steps Taken, steps</div>
+					<div className="flex flex-col lg:flex-row flex-wrap text-black lg:space-x-4 space-y-4">
+						<div className="hidden"></div>
+						<SetFunction title="Sedentary" functionsWithCondition={stepsSedentaryFunctionsWithCondition}/>
+						<SetFunction title="Low Activity" functionsWithCondition={stepsLowActivityFunctionsWithCondition}/>
+						<SetFunction title="Moderate Activity" functionsWithCondition={stepsModerateActivityFunctionsWithCondition}/>
+						<SetFunction title="Active" functionsWithCondition={stepsActiveFunctionsWithCondition}/>
+						<SetFunction title="Very Active" functionsWithCondition={stepsVeryActiveFunctionsWithCondition}/>
+					</div>
 				</div>
+				<div className="rounded-lg border-4 border-slate-800 dark:border-slate-100 p-4">
+					<div className="text-lg font-semibold">Recomended Water Intake, mℓ</div>
+						<div className="flex flex-col lg:flex-row flex-wrap text-black lg:space-x-4 space-y-4">
+							<div className="hidden"></div>
+							<SetFunction title="Very Low" functionsWithCondition={waterVeryLowFunctionsWithCondition}/>
+							<SetFunction title="Low" functionsWithCondition={waterLowFunctionsWithCondition}/>
+							<SetFunction title="Moderate" functionsWithCondition={waterModerateFunctionsWithCondition}/>
+							<SetFunction title="High" functionsWithCondition={waterHighFunctionsWithCondition}/>
+							<SetFunction title="Very High" functionsWithCondition={waterVeryHighFunctionsWithCondition}/>
+						</div>
+					</div>
 			</div>
 		</div>
   );
