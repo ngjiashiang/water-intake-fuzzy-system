@@ -146,8 +146,8 @@ export default function DeterminFuzzySets({
 
   return (
 		<div>
-			<div className="rounded-lg p-4 border-4 border-slate-800 dark:border-slate-100">
-				<div className="mb-4 text-lg font-semibold">Our inputs:</div>
+			<div className="rounded-lg lg:p-4 border-4 border-slate-800 dark:border-slate-100">
+				<div className="p-4 lg:p-0 mb-4 text-lg font-semibold">Our inputs:</div>
 				<div className="not-prose text-black grid lg:grid-cols-2 gap-y-4 lg:gap-x-4">
 					<div className="bg-white p-6 rounded-lg">
 						<div className="text-center font-semibold py-2">Environment Temperature</div>
@@ -223,8 +223,8 @@ export default function DeterminFuzzySets({
 					</div>
 				</div>
 			</div>
-			<div className="mt-12 rounded-lg p-4 border-4 border-slate-800 dark:border-slate-100">
-				<div className="mb-4 text-lg font-semibold">Our output:</div>
+			<div className="mt-12 rounded-lg lg:p-4 border-4 border-slate-800 dark:border-slate-100">
+				<div className="p-4 lg:p-0 mb-4 text-lg font-semibold">Our output:</div>
 				<div className="not-prose text-black grid lg:grid-cols-1 gap-y-4 lg:gap-x-4">
 					<div className="bg-white p-6 rounded-lg">
 						<div className="text-center font-semibold py-2">Recomended Water Intake</div>

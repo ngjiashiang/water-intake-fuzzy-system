@@ -58,7 +58,7 @@ export default function FuzzyAssociativeMemoryTables({
 								<td className="text-center border-2 p-1 lg:p-4 bg-gray-800 text-white">5</td>
 							</tr>
 							<tr>
-								<td rowSpan={6} colSpan={1} className="rotate-180 text-center uppercase bg-gray-800 text-white" style={{ writingMode: 'vertical-rl' }}>
+								<td rowSpan={6} colSpan={1} className="text-center uppercase bg-gray-800 text-white" style={{ writingMode: 'vertical-lr' }}>
 									Temperature Level
 								</td>
 							</tr>

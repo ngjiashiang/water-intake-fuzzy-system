@@ -16,16 +16,16 @@ export default function SetFunction({
   return (
     <div className="bg-white rounded-lg p-4">
 			<div className="mt-4 font-semibold">{title}</div>
-			<div className="items-center flex space-x-4">
+			<div className="items-center flex lg:space-x-4">
 				<div>f(x) =</div>
-				<div className="font-thin leading-none pb-4" style={{fontSize: "200px"}}>
+				<div className="font-thin pb-8" style={{letterSpacing: "0.1px", fontSize: "300px"}}>
 					&#123;
 				</div>
 				<div className="flex flex-col space-y-3">
 					{functionsWithCondition.map((functionWithCondition, index) => (
-						<div key={index} className="grid grid-cols-2 gap-x-4">
-							<div>{functionWithCondition.function}</div> 
-							<div>, {functionWithCondition.condition}</div>
+						<div key={index}>
+							<span>{functionWithCondition.function}</span> 
+							<span>, {functionWithCondition.condition}</span>
 						</div>
 					))}
 				</div>
