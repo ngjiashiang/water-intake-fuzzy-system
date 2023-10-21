@@ -74,19 +74,19 @@ export default function ProblemAndLinguisticVariable({
                 <tr className={(dataIsSet && temperature > 10 && temperature <= 25) ? "border-2 border-black bg-amber-100" : ""}>
                   <td className="text-left py-3 px-4">Cool</td>
                   <td className="py-3 px-4 text-right">
-                    10°C to 25°C
+                    &gt;10°C to 25°C
                   </td>
                 </tr>
                 <tr className={(dataIsSet && temperature > 20 && temperature <= 30) ? "border-2 border-black bg-amber-100" : ""}>
                   <td className="text-left py-3 px-4">Moderate</td>
                   <td className="py-3 px-4 text-right">
-                    20°C to 30°C
+                    &gt;20°C to 30°C
                   </td>
                 </tr>
                 <tr className={(dataIsSet && temperature > 25 && temperature <= 35) ? "border-2 border-black bg-amber-100" : ""}>
                   <td className="text-left py-3 px-4">Warm</td>
                   <td className="py-3 px-4 text-right">
-                    25°C to 35°C
+                    &gt;25°C to 35°C
                   </td>
                 </tr>
                 <tr className={(dataIsSet && temperature > 30) ? "border-2 border-black bg-amber-100" : ""}>
@@ -118,19 +118,19 @@ export default function ProblemAndLinguisticVariable({
                 <tr className={(dataIsSet && water > 400 && water <= 800) ? "border-2 border-black bg-amber-100" : ""}>
                   <td className="text-left py-3 px-4">Low</td>
                   <td className="py-3 px-4 text-right">
-                    400mℓ to 800mℓ
+                   &gt;400mℓ to 800mℓ
                   </td>
                 </tr>
                 <tr className={(dataIsSet && water > 700 && water <= 1200) ? "border-2 border-black bg-amber-100" : ""}>
                   <td className="text-left py-3 px-4">Moderate</td>
                   <td className="py-3 px-4 text-right">
-                    700mℓ to 1200mℓ
+                    &gt;700mℓ to 1200mℓ
                   </td>
                 </tr>
                 <tr className={(dataIsSet && water > 1000 && water <= 1800) ? "border-2 border-black bg-amber-100" : ""}>
                   <td className="text-left py-3 px-4">High</td>
                   <td className="py-3 px-4 text-right">
-                    1000mℓ to 1800mℓ
+                    &gt;1000mℓ to 1800mℓ
                   </td>
                 </tr>
                 <tr className={(dataIsSet && water > 1500) ? "border-2 border-black bg-amber-100" : ""}>
@@ -162,19 +162,19 @@ export default function ProblemAndLinguisticVariable({
                 <tr className={(dataIsSet && steps > 1500 && steps <= 5000) ? "border-2 border-black bg-amber-100" : ""}>
                   <td className="text-left py-3 px-4">Low Activity</td>
                   <td className="py-3 px-4 text-right">
-                    1500 steps to 5000 steps
+                    &gt;1500 steps to 5000 steps
                   </td>
                 </tr>
                 <tr className={(dataIsSet && steps > 4000 && steps <= 8000) ? "border-2 border-black bg-amber-100" : ""}>
                   <td className="text-left py-3 px-4">Moderate Activity</td>
                   <td className="py-3 px-4 text-right">
-                    4000 steps to 8000 steps
+                    &gt;4000 steps to 8000 steps
                   </td>
                 </tr>
                 <tr className={(dataIsSet && steps > 7000 && steps <= 12000) ? "border-2 border-black bg-amber-100" : ""}>
                   <td className="text-left py-3 px-4">Active</td>
                   <td className="py-3 px-4 text-right">
-                    7000 steps to 12000 steps
+                    &gt;7000 steps to 12000 steps
                   </td>
                 </tr>
                 <tr className={(dataIsSet && steps > 10000) ? "border-2 border-black bg-amber-100" : ""}>

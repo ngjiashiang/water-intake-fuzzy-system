@@ -14,7 +14,9 @@ export const getTempCoolDegreeOfMembership = (x: number) => {
   if (x <= 10) {
     return 0;
   } else if (x > 10 && x <= 20) {
-    return 0.1 * x - 1.00;
+    return 0.2 * x - 2;
+  } else if (x > 15 && x <= 20) {
+    return 1;
   } else if (x > 20 && x <= 25) {
     return -0.2 * x + 5;
   }

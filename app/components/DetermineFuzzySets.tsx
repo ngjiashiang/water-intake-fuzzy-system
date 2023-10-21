@@ -47,8 +47,9 @@ export default function DeterminFuzzySets({
 
 	const tempCoolFunctionsWithCondition = [
 		{ function: "0", condition: "x ≤ 10" },
-		{ function: "0.1x - 1.00", condition: "10 < x ≤ 20" },
-		{ function: "0.2x - 4.00", condition: "20 < x ≤ 25" },
+		{ function: "0.2x - 2", condition: "10 < x ≤ 20" },
+		{ function: "1", condition: "15 < x ≤ 20" },
+		{ function: "-0.2x + 5", condition: "20 < x ≤ 25" },
 		{ function: "0", condition: "x > 30" },
 	];
 
@@ -111,6 +112,7 @@ export default function DeterminFuzzySets({
 
 	const stepsSedentaryFunctionsWithCondition = [
 		{ function: "-0.0005x + 1", condition: "0 ≤ x ≤ 2000" },
+		{ function: "0", condition: "x > 2000" },
 	];
 
 	const stepsLowActivityFunctionsWithCondition = [
@@ -122,8 +124,8 @@ export default function DeterminFuzzySets({
 	];
 
 	const stepsModerateActivityFunctionsWithCondition = [
-		{ function: "0", condition: "0 ≤ x ≤ 4500" },
-		{ function: "(1 ÷ 1500)x - 3", condition: "4500 < x ≤ 6000" },
+		{ function: "0", condition: "0 ≤ x ≤ 4000" },
+		{ function: "0.0005x - 2", condition: "4000 < x ≤ 6000" },
 		{ function: "-0.0005x + 4", condition: "6000 < x ≤ 8000" },
 		{ function: "0", condition: "x > 8000" },
 	];

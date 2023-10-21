@@ -20,10 +20,9 @@ export default function FuzzyAssociativeMemoryTables({
 
 	useEffect(() => {
 		if(dataIsSet) {
-			console.log(getDegreeOfMembership(temperature, water, steps))
 			setDegreeOfMembership(getDegreeOfMembership(temperature, water, steps))
 		}
-	}, [dataIsSet])
+	}, [dataIsSet, temperature, water, steps])
 	
 	const temperatureTranslation = ['cold', 'cool', 'moderate', 'warm', 'hot']
 	const waterIntakeTranslation = ['veryLow', 'low', 'moderate', 'high', 'veryHigh']
