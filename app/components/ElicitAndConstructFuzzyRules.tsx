@@ -17,7 +17,7 @@ export default function ElicitAndConstructFuzzyRules({
 }: ElicitAndConstructFuzzyRulesProps) {
   return (
     <div>
-			<h4>Firsts let's understand the relationship between each of the inputs and the output.</h4>
+			<h4>Firsts let us understand the relationship between each of the inputs and the output.</h4>
 			<div>
 				<ul className='dark:marker:text-white marker:text-black list-outside'>
 					<li>
