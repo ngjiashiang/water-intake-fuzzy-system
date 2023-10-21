@@ -42,7 +42,7 @@ export default function FuzzyInference({
 						<div className="font-semibold mb-2">Environment Temperature:</div>
 						<div>
 							{temperatureTranslation.map((item: any, index: number) => (
-								<div>{item} = {degreeOfMembership.temperature[item]}</div>
+								<div key={"temperature"+index}>{item} = {degreeOfMembership.temperature[item]}</div>
 							))}
 						</div>
 					</div>
@@ -50,7 +50,7 @@ export default function FuzzyInference({
 						<div className="font-semibold mb-2">Current Water Intake:</div>
 						<div>
 							{waterIntakeTranslation.map((item: any, index: number) => (
-								<div>{item} = {degreeOfMembership.water[item]}</div>
+								<div key={"water" + index}>{item} = {degreeOfMembership.water[item]}</div>
 							))}
 						</div>
 					</div>
@@ -58,7 +58,7 @@ export default function FuzzyInference({
 						<div className="font-semibold mb-2">Total Steps Taken:</div>
 						<div>
 							{stepsTranslation.map((item: any, index: number) => (
-								<div>{item} = {degreeOfMembership.steps[item]}</div>
+								<div key={"steps" + index}>{item} = {degreeOfMembership.steps[item]}</div>
 							))}
 						</div>
 					</div>
