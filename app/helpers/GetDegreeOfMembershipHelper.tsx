@@ -13,7 +13,7 @@ export const getTempColdDegreeOfMembership = (x: number) => {
 export const getTempCoolDegreeOfMembership = (x: number) => {
   if (x <= 10) {
     return 0;
-  } else if (x > 10 && x <= 20) {
+  } else if (x > 10 && x <= 15) {
     return 0.2 * x - 2;
   } else if (x > 15 && x <= 20) {
     return 1;
@@ -162,8 +162,34 @@ export const getStepsVeryActiveDegreeOfMembership = (x: number) => {
   return 1;
 };
 
+export const getClippedWaterDegreeOfMembership = (yMax: number, value: number, setName: string) => {
+  switch(setName) {
+    case "Very Low":
+      return Math.min(Math.max(getWaterVeryLowDegreeOfMembership(value), 0), yMax)
+    case "Low":
+      return Math.min(Math.max(getWaterLowDegreeOfMembership(value), 0), yMax)
+    case "Moderate":
+      return Math.min(Math.max(getWaterModerateDegreeOfMembership(value), 0), yMax)
+    case "High":
+      return Math.min(Math.max(getWaterHighDegreeOfMembership(value), 0), yMax)
+  }  
+  return Math.min(Math.max(getWaterVeryHighDegreeOfMembership(value), 0), yMax)
+  // return {
+  //   veryLow: Math.min(Math.max(getWaterVeryLowDegreeOfMembership(value), 0), yMax),
+  //   low: Math.min(Math.max(getWaterLowDegreeOfMembership(value), 0), yMax),
+  //   moderate: Math.min(Math.max(getWaterModerateDegreeOfMembership(value), 0), yMax),
+  //   high: Math.min(Math.max(getWaterHighDegreeOfMembership(value), 0), yMax),
+  //   veryHigh: Math.min(Math.max(getWaterVeryHighDegreeOfMembership(value), 0), yMax),
+  // }
+}
+
 export const getDegreeOfMembership = (temp: number, water: number, steps: number) => {
   return {
+    parameter: {
+      temperature: temp,
+      water: water,
+      steps: steps
+    },
     temperature: {
       cold: getTempColdDegreeOfMembership(temp),
       cool: getTempCoolDegreeOfMembership(temp),

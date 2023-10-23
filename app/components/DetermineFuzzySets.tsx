@@ -298,7 +298,6 @@ export default function DeterminFuzzySets({
 							<SetFunction title="Very High" functionsWithCondition={waterVeryHighFunctionsWithCondition}/>
 						</div>
 					</div>
+				</div>
 			</div>
-		</div>
-  );
-}
+)}

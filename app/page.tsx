@@ -97,7 +97,7 @@ export default function Home() {
             Hydration Assistant <FaGlassWaterDroplet color={'rgb(96 165 250)'} size={'25px'} className="inline my-auto"/>
           </h1>
           An expert fuzzy system to recommend how much water should a person drink to stay healthy and hydrated, based on thier
-          <div className='mx-auto text-left w-max block'>
+          <div id="inputs" className='mx-auto text-left w-max block'>
             <ul className='dark:marker:text-white marker:text-black list-outside'>
               <li>
                 Environment Temperature
