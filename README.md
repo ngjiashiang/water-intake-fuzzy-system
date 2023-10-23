@@ -1,7 +1,7 @@
 ## Deployed at
-[https://water-intake-fuzzy-system.vercel.app](https://water-intake-fuzzy-system.vercel.app)
-Whatever is in the `main` branch of this remote repo will be automatically built and deployed to the url above.
-In the event when Vercel is down, follow [## Running this locally](#running-this-locally).
+[https://water-intake-fuzzy-system.vercel.app](https://water-intake-fuzzy-system.vercel.app)\
+Whatever is in the `main` branch of this remote repo will be automatically built and deployed to the url above.\
+In the event when Vercel is down, follow [Running this locally](#running-this-locally).
 
 ## Running this locally
 1. Clone this repository:
@@ -35,8 +35,7 @@ To-do:
 - heavy functions are being called even when it is not needed specifically, checkout `app/components/*`
 - eliminate redundant logic, checkout `app/components/*`
 
-################################################  Next.js original readme  ##############################################
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Original Next.js Readme
 
 ## Getting Started
 
