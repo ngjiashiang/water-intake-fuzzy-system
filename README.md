@@ -1,3 +1,41 @@
+## Deployed at
+[https://water-intake-fuzzy-system.vercel.app](https://water-intake-fuzzy-system.vercel.app)
+Whatever is in the `main` branch of this remote repo will be automatically built and deployed to the url above.
+In the event when Vercel is down, follow [## Running this locally](#running-this-locally).
+
+## Running this locally
+1. Clone this repository:
+```bash
+git clone https://github.com/ngjiashiang/water-intake-fuzzy-system.git
+
+# or if you have GitHub CLI
+gh repo clone ngjiashiang/water-intake-fuzzy-system
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Run the development server:
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Assignment grading
+Probably a bit too much code, and super not readable, if you dont want to go through all the code, an alternative is available at: 
+
+## Contributing
+Fork and submit a PR the usual stuff, you know the drill.
+
+To-do:
+- properly type everything, ctrl+f `: any` to see what's wrong with me
+- heavy functions are being called even when it is not needed specifically, checkout `app/components/*`
+- eliminate redundant logic, checkout `app/components/*`
+
+################################################  Next.js original readme  ##############################################
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

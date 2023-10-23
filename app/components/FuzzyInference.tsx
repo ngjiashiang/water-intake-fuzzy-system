@@ -26,13 +26,15 @@ interface FuzzyInferenceProps {
   water: number;
   steps: number;
   dataIsSet: boolean;
+	handleUpdateMainOuput: (output: number) => void;
 }
 
 export default function FuzzyInference({
 	temperature,
   water,
   steps,
-  dataIsSet = false
+  dataIsSet = false,
+	handleUpdateMainOuput
 }:FuzzyInferenceProps) {
 	const [degreeOfMembership, setDegreeOfMembership] = useState<any>(null)
 	const [rulesToFire, setRulesToFire] = useState<any>(null)
@@ -289,19 +291,29 @@ export default function FuzzyInference({
 		return evenlyDistributedPoints;
 	};
 
-	const getOutput = () => {
-		if(reducedRules != null) {
-			for (const rule of reducedRules) {
-				
-			}
+	const getSampledPointProperty = () => {
+		if(reducedRules != null && samplingPoints != null) {
+			return samplingPoints.map((sampledPoint: number) => {
+				const ruleValues = reducedRules.map((rule: any) => getClippedWaterDegreeOfMembership(rule.value, sampledPoint, rule.key));
+				const maxRuleIndex = ruleValues.indexOf(Math.max(...ruleValues));
+				const selectedRule = reducedRules[maxRuleIndex];
+		
+				return {
+					sampledPoint: sampledPoint,
+					value: sampledPoint * Math.max(...ruleValues),
+					ruleApplied: selectedRule.key,
+					ruleValue: Math.max(...ruleValues)
+				};
+			});
 		}
-		// reducedRules.map((rule: any, index: number) => {
-		// 	// Calculate data for 1 single rule here
+	}
 
-		// 	// Assuming you have a function getClippedWaterDegreeOfMembership
-		// 	const data = getClippedWaterDegreeOfMembership(rule.value, samplePoint, rule.key);
-		// 	return data;  // Return the data for the current rule
-		// }).reduce((maxValue: any, currentValue: any) => Math.max(maxValue, currentValue), -Infinity)
+	const getCentroid = (result: any) => {
+		const sumOfValues = result.reduce((acc: any, obj: any) => acc + obj.value, 0);
+		const sumOfRuleValues = result.reduce((acc: any, obj: any) => acc + obj.ruleValue, 0);
+		const output = sumOfValues / sumOfRuleValues;
+		handleUpdateMainOuput(output)
+		return output;
 	}
 
 	// const dataToClip = JSON.parse(JSON.stringify(WaterData));
@@ -399,11 +411,11 @@ export default function FuzzyInference({
 												<YAxis/>
 												<Tooltip wrapperClassName={"opacity-80"} content={<CustomTooltip unit="mℓ"/>}/>
 												<Legend />
-												<Area dataKey="Very Low" stroke="#264653" />
-												<Area dataKey="Low" stroke="#2a9d8f" />
-												<Area dataKey="Moderate" stroke="#e9c46a" />
-												<Area dataKey="High" stroke="#f4a261" />
-												<Area dataKey="Very High" stroke="#e76f51" />
+												<Area dataKey="Very Low" fill="#264653" stroke="#264653" />
+												<Area dataKey="Low" fill="#2a9d8f" stroke="#2a9d8f" />
+												<Area dataKey="Moderate" fill="#e9c46a" stroke="#e9c46a" />
+												<Area dataKey="High" fill="#f4a261" stroke="#f4a261" />
+												<Area dataKey="Very High" fill="#e76f51" stroke="#e76f51" />
 											</ComposedChart>
 										</ResponsiveContainer>
 									</div>
@@ -448,39 +460,43 @@ export default function FuzzyInference({
 										These are the points that we have sampled:
 									</div>
 									{ reducedRules != null && samplingPoints != null &&
-						
-											samplingPoints.map((samplePoint: any, index: number) => (
-												<div key={"sample"+index}>
-													At {samplePoint} mℓ, firing strenght of the cliped set is:
+										samplingPoints.map((samplePoint: any, index: number) => (
+											<div key={"sample"+index}>
+												At {samplePoint} mℓ, firing strenght of the cliped set is:
+												{
+													reducedRules.map((rule: any, index: number) => (
+														<div key={"rule-" + index + "-show-both"} className="mt-2 w-max mb-4 mr-4 border-4 border-slate-800 dark:border-slate-100 p-4 rounded-lg">
+															Clipping at: {rule.value}, From set: {rule.key}<br />
+															{
+																getClippedWaterDegreeOfMembership(rule.value, samplePoint, rule.key)
+															}
+														</div>
+													))
+												}
+												<div className="mb-12">
+													Max firing strength = 
 													{
-														reducedRules.map((rule: any, index: number) => (
-															<div key={"rule-" + index + "-show-both"} className="mt-2 w-max mb-4 mr-4 border-4 border-slate-800 dark:border-slate-100 p-4 rounded-lg">
-																Clipping at: {rule.value}, From set: {rule.key}<br />
-																{
-																	getClippedWaterDegreeOfMembership(rule.value, samplePoint, rule.key)
-																}
-															</div>
-														))
+														reducedRules.map((rule: any, index: number) => {
+															// Calculate data for 1 single rule here
+												
+															// Assuming you have a function getClippedWaterDegreeOfMembership
+															const data = getClippedWaterDegreeOfMembership(rule.value, samplePoint, rule.key);
+															return data;  // Return the data for the current rule
+														}).reduce((maxValue: any, currentValue: any) => Math.max(maxValue, currentValue), -Infinity)
 													}
-													<div className="mb-12">
-														Max = 
-														{
-															reducedRules.map((rule: any, index: number) => {
-																// Calculate data for 1 single rule here
-													
-																// Assuming you have a function getClippedWaterDegreeOfMembership
-																const data = getClippedWaterDegreeOfMembership(rule.value, samplePoint, rule.key);
-																return data;  // Return the data for the current rule
-															}).reduce((maxValue: any, currentValue: any) => Math.max(maxValue, currentValue), -Infinity)
-														}
-													</div>
-												</div>						
-									))}
+												</div>
+											</div>
+										))}
 								</div>
 							</div>
 							<h4>Finally, we can calculate the output now</h4>
 							<div>
 								We can generate the output by getting the <span className="italic highlighted underline">sumof(sampled point * firing strength) / sumof(strength fired)</span>.
+							</div>
+							<div>
+								{ getSampledPointProperty() != null &&
+									<div>You should still drink: {getCentroid(getSampledPointProperty())} mℓ of water to stay hydrated.</div>
+								}
 							</div>
 						</div>
 					</div>
