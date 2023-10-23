@@ -429,7 +429,7 @@ export default function FuzzyInference({
 									reducedRules.map((rule: any, index: number) => (
 										<div key={"rule-" + index + "-as-function"} className="w-max mb-4 mr-4 border-4 border-slate-800 dark:border-slate-100 p-4 rounded-lg">
 											{
-												<div className="w-max" key={"rule-" + index + "-" + rule.key + "-" + rule.value}>
+												<div className="w-full" key={"rule-" + index + "-" + rule.key + "-" + rule.value}>
 													{
 														<div>
 															<div className="text-lg font-semibold">Recomended Water Intake, mℓ</div>

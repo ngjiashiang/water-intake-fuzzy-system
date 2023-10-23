@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Hydration Assistant',
   description: 'Assignment 1 for CSC 3034',
+  viewport: "width=device-width, initial-scale=1"
 }
 
 export default function RootLayout({
