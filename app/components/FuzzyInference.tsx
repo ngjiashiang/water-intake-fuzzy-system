@@ -462,17 +462,19 @@ export default function FuzzyInference({
 									{ reducedRules != null && samplingPoints != null &&
 										samplingPoints.map((samplePoint: any, index: number) => (
 											<div key={"sample"+index}>
-												At {samplePoint} mℓ, firing strenght of the cliped set is:
-												{
-													reducedRules.map((rule: any, index: number) => (
-														<div key={"rule-" + index + "-show-both"} className="mt-2 w-max mb-4 mr-4 border-4 border-slate-800 dark:border-slate-100 p-4 rounded-lg">
-															Clipping at: {rule.value}, From set: {rule.key}<br />
-															{
-																getClippedWaterDegreeOfMembership(rule.value, samplePoint, rule.key)
-															}
-														</div>
-													))
-												}
+												At {samplePoint} mℓ, firing strength of the cliped set is:
+												<div className="flex flex-wrap">
+													{
+														reducedRules.map((rule: any, index: number) => (
+															<div key={"rule-" + index + "-show-both"} className="mt-2 mb-4 mr-4 border-4 border-slate-800 dark:border-slate-100 p-4 rounded-lg">
+																Clipping at: {rule.value}, From set: {rule.key}<br />
+																{
+																	getClippedWaterDegreeOfMembership(rule.value, samplePoint, rule.key)
+																}
+															</div>
+														))
+													}
+												</div>
 												<div className="mb-12">
 													Max firing strength = 
 													{
@@ -497,6 +499,14 @@ export default function FuzzyInference({
 								{ getSampledPointProperty() != null &&
 									<div>You should still drink: {getCentroid(getSampledPointProperty())} mℓ of water to stay hydrated.</div>
 								}
+								<div className="italic mt-6">
+									<div>Disclaimers:</div>
+									<div>
+										This is not medical advice. Since we are only sampling for 5 different points of recommended water intake with a maximum of 2000mℓ, our recommendation is only capable of providing a maximum of 2000mℓ.
+										<br />
+										Mathematically you can drink infinite amounts of water in a day, but we cant really sample infinite points of recommended water intake.
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
