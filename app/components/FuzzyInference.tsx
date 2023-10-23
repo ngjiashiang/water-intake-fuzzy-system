@@ -450,7 +450,7 @@ export default function FuzzyInference({
 									{ reducedRules != null && samplingPoints != null &&
 						
 											samplingPoints.map((samplePoint: any, index: number) => (
-												<div>
+												<div key={"sample"+index}>
 													At {samplePoint} mℓ, firing strenght of the cliped set is:
 													{
 														reducedRules.map((rule: any, index: number) => (
