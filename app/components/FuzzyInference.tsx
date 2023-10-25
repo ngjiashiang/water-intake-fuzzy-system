@@ -114,7 +114,7 @@ export default function FuzzyInference({
     if (!props.active) {
       return null
     }
-    return <DefaultTooltipContent {...props} label={"At " + props.label + props.unit + " degree of membership is:"}/>;
+    return <DefaultTooltipContent {...props} label={"At " + props.label + props.unit + " firing strength is:"}/>;
 	};
 	
 	const getClippedWaterData = () => {
@@ -398,7 +398,7 @@ export default function FuzzyInference({
 							<div className="not-prose text-black grid lg:grid-cols-1 gap-y-4 lg:gap-x-4">
 								<div className="bg-amber-50 p-6 rounded-lg">
 									<div className="text-center font-semibold py-2">Recomended Water Intake</div>
-									<div className="text-left">degree of<br />membership</div>
+									<div className="text-left">firing<br />strength</div>
 									<div>
 										<ResponsiveContainer width={"100%"} minWidth={"300px"} minHeight={"300px"}>
 											<ComposedChart
