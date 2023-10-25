@@ -378,8 +378,8 @@ export default function FuzzyInference({
 													{
 														<div>
 															<div>IF Environment Temperature = {rule.temperature.key} = {rule.temperature.value}</div>
-															<div>AND  Current Water Intake = {rule.currentWaterIntake.key} = {rule.currentWaterIntake.value}</div>
-															<div>AND Total Steps Taken = {rule.steps.key} = {rule.steps.value}</div>
+															<div>OR Current Water Intake = {rule.currentWaterIntake.key} = {rule.currentWaterIntake.value}</div>
+															<div>OR Total Steps Taken = {rule.steps.key} = {rule.steps.value}</div>
 															<div>
 																THEN Recomended Water Intake = {rule.recommendedWaterIntake.key} = {rule.recommendedWaterIntake.value}
 															</div>
