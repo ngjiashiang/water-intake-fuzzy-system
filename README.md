@@ -25,7 +25,7 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Assignment grading
-Probably a bit too much code, and super not readable, if you dont want to go through all the code, an alternative is available at: 
+The main logic of this application is in `/app/*`.
 
 ## Contributing
 Fork and submit a PR the usual stuff, you know the drill.
