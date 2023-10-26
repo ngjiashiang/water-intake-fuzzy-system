@@ -24,7 +24,7 @@ export default function ElicitAndConstructFuzzyRules({
 						Greater environment temperature, recommend greater water intake.
 					</li>
 					<li>
-						Creater current water intake, recommend lesser water intake.
+						Greater current water intake, recommend lesser water intake.
 					</li>
 					<li>
 						Greater steps taken, recommend greater water intake.
@@ -64,7 +64,7 @@ export default function ElicitAndConstructFuzzyRules({
 					</div>
 				</div>
 				<div className="border-slate-800 dark:border-slate-100 border-4 rounded-lg p-4 w-full lg:w-1/5">
-					<div className="text-lg font-semibold mb-6">Recomended Water Intake</div>
+					<div className="text-lg font-semibold mb-6">Recommended Water Intake</div>
 					<div>
 						Very Low: 1<br />
 						Low: 2<br />
@@ -84,7 +84,7 @@ export default function ElicitAndConstructFuzzyRules({
 				<span className="italic">weightage<sub>a</sub> + weightage<sub>b</sub> + weightage<sub>c</sub> = 1</span>
 			</div>
 			<div className="mt-2">
-				We are doing (weightage<sub>b</sub> * (6 - Level of Current Water Intake)) because Level of Current Water Intake has a inverse relationship with Level of Recomended Water Intake.
+				We are doing (weightage<sub>b</sub> * (6 - Level of Current Water Intake)) because Level of Current Water Intake has a inverse relationship with Level of Recommended Water Intake.
 				<br />Any decimals will be rounded up, because no harm in drinking slightly more water, right?
 			</div>
 			<div className="mt-2">

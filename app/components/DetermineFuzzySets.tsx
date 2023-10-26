@@ -227,7 +227,7 @@ export default function DeterminFuzzySets({
 				<div className="p-4 lg:p-0 mb-4 text-lg font-semibold">Our output:</div>
 				<div className="not-prose text-black grid lg:grid-cols-1 gap-y-4 lg:gap-x-4">
 					<div className="bg-white p-6 rounded-lg">
-						<div className="text-center font-semibold py-2">Recomended Water Intake</div>
+						<div className="text-center font-semibold py-2">Recommended Water Intake</div>
 						<div className="text-left">degree of<br />membership</div>
 						<div>
 							<ResponsiveContainer width={"100%"} minWidth={"300px"} minHeight={"300px"}>
@@ -288,7 +288,7 @@ export default function DeterminFuzzySets({
 					</div>
 				</div>
 				<div className="rounded-lg border-4 border-slate-800 dark:border-slate-100 p-4">
-					<div className="text-lg font-semibold">Recomended Water Intake, mℓ</div>
+					<div className="text-lg font-semibold">Recommended Water Intake, mℓ</div>
 						<div className="flex flex-col lg:flex-row flex-wrap text-black lg:space-x-4 space-y-4">
 							<div className="hidden"></div>
 							<SetFunction title="Very Low" functionsWithCondition={waterVeryLowFunctionsWithCondition}/>

@@ -367,7 +367,7 @@ export default function FuzzyInference({
 						</div>
 						<div className="mt-12">
 							<h4>The rules that will be fired are:</h4>
-							<div className="italic">* the firing strength for Recomended Water Intake will be the max of the conditions degree of membership, because, it wont hurt to drink slightly more water right?</div>
+							<div className="italic">* the firing strength for Recommended Water Intake will be the max of the conditions degree of membership, because, it wont hurt to drink slightly more water right?</div>
 							<div className="flex flex-wrap py-6">
 								{
 									rulesToFire.map((rule: any, index: number) => (
@@ -381,7 +381,7 @@ export default function FuzzyInference({
 															<div>OR Current Water Intake = {rule.currentWaterIntake.key} = {rule.currentWaterIntake.value}</div>
 															<div>OR Total Steps Taken = {rule.steps.key} = {rule.steps.value}</div>
 															<div>
-																THEN Recomended Water Intake = {rule.recommendedWaterIntake.key} = {rule.recommendedWaterIntake.value}
+																THEN Recommended Water Intake = {rule.recommendedWaterIntake.key} = {rule.recommendedWaterIntake.value}
 															</div>
 														</div>
 													}
@@ -393,11 +393,11 @@ export default function FuzzyInference({
 							</div>
 						</div>
 						<div className="mt-12">
-							<h4>Remember the fuzzy set for Recomended Water Intake?</h4>
-							<div>Let us aggregate the fuzzy sets and the firing strength of Recomended Water Intake from the rules that should be fired.</div>
+							<h4>Remember the fuzzy set for Recommended Water Intake?</h4>
+							<div>Let us aggregate the fuzzy sets and the firing strength of Recommended Water Intake from the rules that should be fired.</div>
 							<div className="not-prose text-black grid lg:grid-cols-1 gap-y-4 lg:gap-x-4">
 								<div className="bg-amber-50 p-6 rounded-lg">
-									<div className="text-center font-semibold py-2">Recomended Water Intake</div>
+									<div className="text-center font-semibold py-2">Recommended Water Intake</div>
 									<div className="text-left">firing<br />strength</div>
 									<div>
 										<ResponsiveContainer width={"100%"} minWidth={"300px"} minHeight={"300px"}>
@@ -432,7 +432,7 @@ export default function FuzzyInference({
 												<div className="w-full" key={"rule-" + index + "-" + rule.key + "-" + rule.value}>
 													{
 														<div>
-															<div className="text-lg font-semibold">Recomended Water Intake, mℓ</div>
+															<div className="text-lg font-semibold">Recommended Water Intake, mℓ</div>
 															<div className="text-black">
 																<SetFunction title={rule.key} functionsWithCondition={waterFunctions[
 																	waterIntakeTranslationNormal.indexOf(rule.key)
