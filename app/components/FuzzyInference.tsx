@@ -107,7 +107,7 @@ export default function FuzzyInference({
 	const stepsTranslationCamelCase = ['sedentary', 'lowActivity', 'moderateActivity', 'active', 'veryActive'];
 
 	const temperatureTranslationNormal = ['Cold', 'Cool', 'Moderate', 'Warm', 'Hot'];
-	const waterIntakeTranslationNormal = ['Very Low', 'Low ', 'Moderate', 'High', 'Very High'];
+	const waterIntakeTranslationNormal = ['Very Low', 'Low', 'Moderate', 'High', 'Very High'];
 	const stepsTranslationNormal = ['Sedentary', 'Low Activity', 'Moderate Activity', 'Active', 'Very Active'];
 
 	const CustomTooltip = (props:any) => {
@@ -123,7 +123,14 @@ export default function FuzzyInference({
 			recommendedWaterIntakeArray.push(item.recommendedWaterIntake);
 		}
 
-		const uniqueKeysMap: any = {};
+		const uniqueKeysMap: any = {
+			"Very Low": 0,
+			"Low": 0,
+			"Moderate": 0,
+			"High": 0,
+			"Very High": 0
+		};
+
 		for (const item of recommendedWaterIntakeArray) {
 			const key = item.key;
 			const value = item.value;
@@ -133,28 +140,29 @@ export default function FuzzyInference({
 				uniqueKeysMap[key] = value;
 			}
 		}
-
+		console.log(uniqueKeysMap)
 		// Convert the uniqueKeysMap back to an array of objects
 		const limits: any = Object.keys(uniqueKeysMap).map((key) => ({
 			key,
 			value: uniqueKeysMap[key],
 		}));
-
+		console.log(reducedRules)
+		console.log(WaterData)
 		console.log(limits)
 
-		// Create a new object to store the modified data
 		const modifiedData = WaterData.map((obj: any) => {
-			const newObj: any = { name: obj.name };
-			for (const key in obj) {
-				if (key !== "name") {
-					newObj[key] = limits.some((limit: any) => limit.key === key) ? 
-							(obj[key] <= limits.find((limit: any) => limit.key === key).value ? obj[key] : limits.find((limit: any) => limit.key === key).value)
-							: 0;
-				}
-			}
+			const newObj: any = { name: obj.name }; // Initialize a new object with the 'name' property
+
+			// Iterate through uniqueKeysMap to cap the values in the current object
+			limits.forEach((limit: any) => {
+				const key = limit.key;
+				const capValue = limit.value;
+				newObj[key] = Math.min(obj[key], capValue);
+			});
+
 			return newObj;
 		});
-
+		console.log(modifiedData)
 		return modifiedData;
 	}
 
