@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { FaGlassWaterDroplet } from "react-icons/fa6";
+import { AiFillGithub } from "react-icons/ai";
 import Switch from '@mui/material/Switch';
 import { useState, useEffect } from 'react';
 import ProblemAndLinguisticVariable from '@components/ProblemAndLinguisticVariable';
@@ -117,6 +118,7 @@ export default function Home() {
             </ul>
           </div>
           to contribute to <a className="text-blue-500 underline" href="https://sdgs.un.org/goals/goal3" target="_blank"><code>SDG 3: Ensure healthy lives and promote well-being for all at all ages</code></a>.
+          <div className='mt-2'>Code is available at: <a href="https://github.com/ngjiashiang/water-intake-fuzzy-system" className='text-blue-500'><AiFillGithub size={25} className="inline" /> https://github.com/ngjiashiang/water-intake-fuzzy-system</a></div>
         </div>
         <div className='flex flex-col space-y-4 w-full lg:max-w-xl mx-auto py-6'>
           <FieldBuilderWithValidation 
