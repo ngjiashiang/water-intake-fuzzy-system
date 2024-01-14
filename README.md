@@ -1,3 +1,7 @@
+## Introduction
+An assignment for my Computer Intelligence class.\
+Basically showing the step-by-step calculation of a fuzzy system on a web page.
+
 ## Deployed at
 [https://water-intake-fuzzy-system.vercel.app](https://water-intake-fuzzy-system.vercel.app)\
 Whatever is in the `main` branch of this remote repo will be automatically built and deployed to the url above.\
