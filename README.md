@@ -1,6 +1,6 @@
 ## Introduction
 An assignment for my Computer Intelligence class.\
-Basically showing the step-by-step calculation of a fuzzy system on a web page.
+I want to truly understand and be able to code out all components from 0 to 1, so, instead of using `scikit-learn` or other machine learning libraries, I built this to show the step-by-step calculation of a fuzzy system on a web page.
 
 ## Deployed at
 [https://water-intake-fuzzy-system.vercel.app](https://water-intake-fuzzy-system.vercel.app)\
